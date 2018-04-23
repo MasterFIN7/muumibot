@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
 
-var economy = require('discord-eco');
-
 const PREFIX = "m!";
 
 var bot = new Discord.Client();
