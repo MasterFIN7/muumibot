@@ -74,6 +74,19 @@ bot.on("message", function(message) {
         message.guild.member(bUser).ban(bReason);
         banChannel.send(banEmbed);
         break;
+      case "clear":
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Ei.");
+        if(!args[0]) return message.channel.send("oof");
+        message.channel.bulkDelete(args[0]).then(() => {
+          message.channel.send(`Tyhjennetty ${args[0]} viestiä.`).then(msg => msg.delete(5000));
+        });
+        break;
+      case "say":
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Ei");
+        let botmessage = args.join(" ");
+        message.delete().catch();
+        message.channel.send(botmessage);
+        break;
       case "help":
         var embed = new Discord.RichEmbed()
         .setTitle("My Prefix is m!")
