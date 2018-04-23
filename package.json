@@ -1,0 +1,14 @@
+{
+  "name": "muumibotti",
+  "version": "1.0.0",
+  "description": "super muumibotti!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Master FIN",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
