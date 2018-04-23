@@ -13,7 +13,7 @@ var fortunes = [
 
 bot.on("ready", function() {
     console.log("Ready");
-    bot.user.setGame("Use m!help");
+    bot.user.setGame("Tee m!help");
 });
 
 bot.on("message", function(message) {
