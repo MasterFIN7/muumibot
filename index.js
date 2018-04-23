@@ -39,7 +39,7 @@ bot.on("message", function(message) {
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-        var kickEmbed = new Discord.RichEmbed()
+        let kickEmbed = new Discord.RichEmbed()
         .setDescription("~Kick~")
         .setcolor(RED)
         .addField("Kicked user", `${kUser} with ID ${kUser.id}`)
