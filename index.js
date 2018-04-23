@@ -26,7 +26,7 @@ bot.on("message", function(message) {
   
     switch (args[0].toLowerCase()) {
       case "ping":
-        message.channel.sendMessage(`ping is ${Math.round(bot.ping)}ms`);
+        message.channel.sendMessage(`Pong! \`${client.pings[0]}ms\``);
         break;
       case "8ball":
         if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
