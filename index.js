@@ -18,15 +18,6 @@ bot.on("ready", function() {
     bot.user.setGame("Use m!help");
 });
 
-economy.fetchBalance('userID').then((i) => {
-    console.log(i) // { userID: '144645791145918464', money: 998, lastDaily: 'Not Collected' }
-    console.log(i.money) // 998
-});
-
-economy.updateBalance('userID', 'value').then((i) => {
-    console.log(i) // Returns the updated result.
-    console.log(i) // Returns the updated result.
-});
 
 bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
@@ -42,16 +33,6 @@ bot.on("message", function(message) {
       case "8ball":
         if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
         else message.channel.sendMessage("Can't read that");
-        break;
-    case "balance":
-        economy.fetchBalance(message.author.id).then((i) => {
-            message.channel.send(`**Balance:** ${i.money}`);
-        });
-        break;
-    case "payday":
-        economy.updateBalance(message.author.id, 500).then((i) => { // economy.updateBalance grabs the (userID, value) value being how much you want to add, and puts it into 'i'.
-            message.channel.send(`**You got $500!**\n**New Balance:** ${i.money}`);
-        });
         break;
       case "help":
         var embed = new Discord.RichEmbed()
