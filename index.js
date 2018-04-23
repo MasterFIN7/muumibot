@@ -39,7 +39,7 @@ bot.on("message", function(message) {
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-        let kickEmbed = new Discord.RichEmbed()
+        var kickEmbed = new Discord.RichEmbed()
         .setDescription("~Kick~")
         .addField("Kicked user", `${kUser} with ID ${kUser.id}`)
         .addField("Kicked by", `<@${message.author.id}> with ID ${message.author.id}`)
@@ -52,6 +52,27 @@ bot.on("message", function(message) {
 
         message.guild.member(kUser).kick(kReason);
         kickChannel.send(kickEmbed);
+        break;
+      case "ban":
+        let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!bUser) return message.channel.send("En löydä käyttäjää!");
+        let bReason = args.join(" ").slice(22);
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
+        if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be banned!");
+
+        var banEmbed = new Discord.RichEmbed()
+        .setDescription("~Ban~")
+        .addField("Banned user", `${bUser} with ID ${bUser.id}`)
+        .addField("Banned by", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Banned In", message.channel)
+        .addField("Time", message.createdAt)
+        .addField("Reason", bReason);
+
+        let banChannel = message.guild.channels.find(`name`, "incidents");
+        if(!banChannel) return message.channel.send("Can't find incidents channel.");
+
+        message.guild.member(bUser).ban(bReason);
+        banChannel.send(banEmbed);
         break;
       case "help":
         var embed = new Discord.RichEmbed()
