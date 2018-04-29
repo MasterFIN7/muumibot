@@ -35,45 +35,11 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
-    if(!prefixes[message.guild.id]){
-      prefixes[message.guild.id] = {
-        prefixes: botconfig.prefix
-      };
-    }
-
-    let prefix = prefixes[message.guild.id].prefixes;
+    let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-
-
-    if(!coins[message.author.id]){
-      coins[message.author.id] = {
-        coins: 0
-      };
-    }
-
-    let coinAmt = Math.floor(Math.random() * 15) + 1;
-    let baseAmt = Math.floor(Math.random() * 15) + 1;
-    console.log(`${coinAmt} ; ${baseAmt}`);
-
-    if(coinAmt === baseAmt){
-      coins[message.author.id] = {
-        coins: coins[message.author.id].coins + coinAmt
-      };
-
-    fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-      if (err) console.log(err)
-    });
-    let coinEmbed = new Discord.RichEmbed()
-    .setAuthor(message.author.username)
-    .setColor("#ffffff")
-    .addField("💰", `${coinAmt} Kolikkoja lisätty!`);
-
-    message.channel.send(coinEmbed);
-    }
 
 
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
@@ -137,4 +103,4 @@ bot.on("message", async message => {
     // }
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(botconfig.token);
