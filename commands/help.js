@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
 
 
   message.channel.send({embed: {
-    .setTitle("**Komennot**")
-    .setColor("#ffffff")
+    .setTitle: "**Komennot**"
+    .setColor: "#ffffff"
     .Description: "**ban** Anna porttikielto käyttäjälle."
     .Description: "**addrole** Lisää rooli käyttäjälle."
     .Description: "**clear** Tyhjentää valitun määrän viestejä."
