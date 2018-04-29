@@ -20,11 +20,7 @@ module.exports.run = async (bot, message, args) => {
     });
   });
 
-  let hEmbed = new Discord.RichEmbed()
-  .setTitle("**Komennot:**")
-  .setDescription("Prefix on ``m!``")
-  .setColor("#ffffff")
-  .addBlakField(`${props}`);
+  message.channel.send(`${props}`);
 
 }
 module.exports.help = {
