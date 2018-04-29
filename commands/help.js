@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
 
   message.channel.send({embed: {
-    .setColor: "#ffffff",
+    .color: "#ffffff",
     .title: "**Komennot**",
     .Description: "**ban** Anna porttikielto käyttäjälle.",
     .Description: "**addrole** Lisää rooli käyttäjälle.",
