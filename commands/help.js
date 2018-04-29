@@ -3,24 +3,13 @@ const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
 
-  fs.readdir("./commands/", (err, files) => {
+  let hEmbed = new Discord.RichEmbed()
+  .setTitle("**Komennot**")
+  .setColor("#ffffff")
+  .setThumbnail(bot.user.avatarURL)
+  .addBlankField("**ban**", "Anna porttikielto käyttäjälle.");
 
-    if(err) console.log(err);
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if(jsfile.length <= 0){
-      console.log("En loydä komentoja!");
-      return;
-    }
-
-    jsfile.forEach((f, i) =>{
-      let props = require(`./commands/${f}`);
-      console.log(`${f} loaded!`);
-      bot.commands.set(props.help.name, props);
-    });
-  });
-
-  message.channel.send(`${props}`);
+  message.channel.send(hEmbed);
 
 }
 module.exports.help = {
