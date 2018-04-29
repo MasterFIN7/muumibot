@@ -8,19 +8,19 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("**Komennot**")
   .setDescription("Prefix on `m!`")
 
-  .addField("**addrole** Lisää jollekkin rooli.")
-  .addField("**ban** Anna jäsenelle porttikielto.")
-  .addField("**clear** Tyhjennä valittu määrä viestejä.")
-  .addField("**embed** Toistaa mitä sanot eri muodossa.")
-  .addField("**help** Näyttää tämän listan.")
-  .addField("**kick** Potki jäsen.")
-  .addField("**ping** Näyttää botin Pingi.")
-  .addField("**removerole** Poista joku rooli.")
-  .addField("**report** Reporttaa käyttäjän.")
-  .addField("**say** Toistaa mitä sanot.")
-  .addField("**tempmute** Mykistä joku.")
-  .addField("**warn** Varoita jäsentä.")
-  .addField("**warnlevel** Näyttää jäsenen varoitukset");
+  .setTitle("**addrole** Lisää jollekkin rooli.")
+  .setTitle("**ban** Anna jäsenelle porttikielto.")
+  .setTitle("**clear** Tyhjennä valittu määrä viestejä.")
+  .setTitle("**embed** Toistaa mitä sanot eri muodossa.")
+  .setTitle("**help** Näyttää tämän listan.")
+  .setTitle("**kick** Potki jäsen.")
+  .setTitle("**ping** Näyttää botin Pingi.")
+  .setTitle("**removerole** Poista joku rooli.")
+  .setTitle("**report** Reporttaa käyttäjän.")
+  .setTitle("**say** Toistaa mitä sanot.")
+  .setTitle("**tempmute** Mykistä joku.")
+  .setTitle("**warn** Varoita jäsentä.")
+  .setTitle("**warnlevel** Näyttää jäsenen varoitukset");
 
   message.channel.send(sEmbed);
 
