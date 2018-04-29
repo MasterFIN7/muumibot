@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Ei.");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.reply("En löydä käyttäjää!");
