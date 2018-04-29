@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("**Komennot**")
   .setColor("#ffffff")
   .setThumbnail(bot.user.avatarURL)
-  .addBlankField(true)
   .addField("**ban**", "Anna porttikielto käyttäjälle.", true)
   .addField("**addrole**", "Lisää rooli käyttäjälle.", true)
   .addField("**clear**", "Tyhjentää valitun määrän viestejä.", true)
