@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("**Komennot**")
   .setColor("#ffffff")
   .setThumbnail(bot.user.avatarURL)
-  .addText("**ban**", "Anna porttikielto käyttäjälle.");
+  .addField("**ban**", "Anna porttikielto käyttäjälle.");
 
   message.channel.send(hEmbed);
 
