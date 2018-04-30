@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
   let hEmbed = new Discord.RichEmbed()
+  .setImage(bot.user.avatarURL)
   .setColor("#ffffff")
   .addField("Komennot:", "addrole\nban\nclear\nembed\nhelp\nkick\nping\nremoverole\nreport\nsay\ntempmute\nwarn\nwarnlevel", true);
 
