@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
   let hEmbed = new Discord.RichEmbed()
   .addBlankField(true)
-  .addField("Test", "Hello");
+  .addField("Test", "Hello", true);
 
   message.channel.send(hEmbed);
 
