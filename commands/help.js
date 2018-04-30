@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
   let hEmbed = new Discord.RichEmbed()
-  .addField("Test", "Hello\nTest", true);
+  .setColor("#ffffff")
+  .addField("Komennot:", "addrole\nban\nclear\nembed\nhelp\nkick\nping\nremoverole\nreport\nsay\ntempmute\nwarn\nwarnlevel", true);
 
   message.channel.send(hEmbed);
 
